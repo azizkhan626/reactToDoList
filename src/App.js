@@ -1,22 +1,5 @@
-import React from 'react';
-import { useRoutes } from 'react-router-dom';
-
-
-
-import Homepage from "./pages/Homepage";
-import Reviewpage from "./pages/ReviewDetails";
-import Category from "./pages/Category";
-import Sidheader from './component/Sidheader';
-// import HomePageA from './pages/HomePageA';
-
-
-
-
-
-
-
-
-
+import React ,{useState} from 'react';
+import Todolist from './Todolist';
 
 
 
@@ -24,37 +7,60 @@ import Sidheader from './component/Sidheader';
 
 const App = () => {
 
+const [inputdata,setinputdata] =useState("");
 
- 
+const [liststor,setliststor] =useState([])
 
-    const routes = useRoutes([
+const input_event = (e) =>{
+ setinputdata(e.target.value);
 
-        { path: '/', element: <Homepage /> },
-        // { path: '/', element: <HomePageA /> },
-        { path: '/review:id', element: <Reviewpage /> },
-        { path: '/category/:id', element: <Category /> },
-        { path: 'details/:id', element: <Reviewpage /> }
+}
 
-    ]);
+const add_event = () =>{
+  
+    setliststor((old_data)=>{
+        return [...old_data,inputdata]
+    })
+  setinputdata("")
+    
+}    
 
+const DeleteEvent = (id)=>{
+    setliststor((old_data)=>{
+        return old_data.filter((crnData,index)=>{
+            return index !== id;
+        })
+    })
+}
 
+    
 
-    return (
-     
-                 <div className='App'>
-                
-               
-                    <Sidheader />
+    return(
+        <div className='container'>
 
-                    {routes}
-                   
-          
+            <div className='center_div'> 
+            
+                <h1 className='head_h1'>todo list</h1>
+                    <div className='input_div'>
+
+                    
+                <input onChange={input_event} value={inputdata} placeholder="type" />
+                <button onClick={add_event} className='Add_btn'>+</button>
                 </div>
 
+                <ul>
+                    {liststor.map((list_i,ind)=>{
+                          return (
+                          <Todolist list={list_i} delete_btn={DeleteEvent} key={ind} id={ind}  />
+                          )
+                    })}
+                </ul>
+                
+                </div>
            
+        </div>
+    )
 
-        
-    );
 };
 
 export default App;
