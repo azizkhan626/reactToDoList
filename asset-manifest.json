@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/npm%20run%20denpreactToDoList/static/css/main.678e77fe.css",
-    "main.js": "/npm%20run%20denpreactToDoList/static/js/main.94bb747c.js",
-    "index.html": "/npm%20run%20denpreactToDoList/index.html",
-    "main.678e77fe.css.map": "/npm%20run%20denpreactToDoList/static/css/main.678e77fe.css.map",
-    "main.94bb747c.js.map": "/npm%20run%20denpreactToDoList/static/js/main.94bb747c.js.map"
+    "main.css": "/reactToDoList/static/css/main.678e77fe.css",
+    "main.js": "/reactToDoList/static/js/main.94bb747c.js",
+    "index.html": "/reactToDoList/index.html",
+    "main.678e77fe.css.map": "/reactToDoList/static/css/main.678e77fe.css.map",
+    "main.94bb747c.js.map": "/reactToDoList/static/js/main.94bb747c.js.map"
   },
   "entrypoints": [
     "static/css/main.678e77fe.css",
